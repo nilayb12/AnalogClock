@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: rgb(30, 0, 54);
+}
+footer{
+    position: fixed;
+    bottom: 20px;
+    opacity: .3;
+    transition: opacity .2s ease-in-out;
+    padding: 5px 10px;
+    border: 2px solid #c77700;
+}
+footer:hover{
+    opacity: 1;
+}
+h3{
+    color: #fff;
+    font-family: sans-serif;
+}
+h3 a{
+    color: #c77700;
+    text-decoration: none;
+}
+.clock{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(clock4_alt.png);
+    background-size: cover;
+    border: 6px solid rgb(30, 0, 54);
+    border-radius: 100%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.5),
+                inset 0 15px 15px rgb(0, 0, 0, 0.5);
+}
+.clock:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 100%;
+    z-index: 100;
+}
+.clock .hour,
+.clock .min,
+.clock .sec{
+    position: absolute;
+}
+.clock .hour, .hr{
+    width: 165px;
+    height: 230px;
+}
+.clock .min, .mn{
+    width: 192px;
+    height: 292.5px;
+}
+.clock .sec, .sc{
+    width: 235px;
+    height: 375px;
+}
+.hr, .mn, .sc{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 100%;
+}
+.hr:before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 120px;
+    background: #ff0000;
+    z-index: 10;
+    border-radius: 100px 100px 10px 10px;
+}
+.mn:before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 150px;
+    background: rgb(0, 255, 255);
+    z-index: 11;
+    border-radius: 100px 100px 10px 10px;
+}
+
+.sc:before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 195px;
+    background: rgb(0, 255, 106);
+    z-index: 12;
+    border-radius: 100px 100px 10px 10px;
+}
+ @media only screen and (max-width :385px){
+     .clock{
+        width: 270px;
+        height: 270px;
+     }
+     footer{
+         font-size: 0.9rem;
+     }
+ }
+ @media only screen and (max-width :300px){
+     footer{
+         font-size: 0.7rem;
+     }
+ }
